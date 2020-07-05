@@ -15,18 +15,20 @@ WHODICT = {
     "client": "c",
     "c": "c"
 }
-MULTI_SERVER_COMMAND = "echo s_mul_{HOST}_{i}_{t} > {file_name}" # マルチキャスト
-UNI_SERVER_COMMAND = "echo s_uni_{HOST}_{i}_{t} > {file_name}" # ユニキャスト
+
+# テスト
+# MULTI_SERVER_COMMAND = "echo s_mul_{HOST}_{i}_{t} > {file_name}" # マルチキャスト
+# UNI_SERVER_COMMAND = "echo s_uni_{HOST}_{i}_{t} > {file_name}" # ユニキャスト
+# MULTI_CLIENT_COMMAND = "echo c_mul_{HOST}_{i}_{b}_{t} > test.txt" # マルチキャスト
+# UNI_CLIENT_COMMAND = "echo c_uni_{HOST}_{i}_{b}_{t} > test.txt" # ユニキャスト
+# テスト
+
+MULTI_SERVER_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} > {file_name}" # マルチキャスト
+UNI_SERVER_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} > {file_name}" # ユニキャスト
 # MULTI_SERVER_COMMAND = "powershell -Command \"iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} | Add-Content -Path {file_name}.txt -PassThru\"" # マルチキャスト
 # UNI_SERVER_COMMAND = "powershell -Command \"iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} | Add-Content -Path {file_name}.txt -PassThru\"" # ユニキャスト
-MULTI_CLIENT_COMMAND = "echo c_mul_{HOST}_{i}_{b}_{t} > test.txt" # マルチキャスト
-UNI_CLIENT_COMMAND = "echo c_uni_{HOST}_{i}_{b}_{t} > test.txt" # ユニキャスト
-# MULTI_SERVER_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} > {file_name}" # マルチキャスト
-# UNI_SERVER_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} > {file_name}" # ユニキャスト
-# # MULTI_SERVER_COMMAND = "powershell -Command \"iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} | Add-Content -Path {file_name}.txt -PassThru\"" # マルチキャスト
-# # UNI_SERVER_COMMAND = "powershell -Command \"iperf -s -B {HOST} -i {i} -u -f m -p 5001 -w 1M -t {t} | Add-Content -Path {file_name}.txt -PassThru\"" # ユニキャスト
-# MULTI_CLIENT_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -b {b}  -t {t}" # マルチキャスト
-# UNI_CLIENT_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -b {b} -t {t}" # ユニキャスト
+MULTI_CLIENT_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -b {b}  -t {t}" # マルチキャスト
+UNI_CLIENT_COMMAND = "iperf -s -B {HOST} -i {i} -u -f m -p 5001 -b {b} -t {t}" # ユニキャスト
 
 
 COMMANDDICT = {
